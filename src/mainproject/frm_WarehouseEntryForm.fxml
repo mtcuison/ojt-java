@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="486.0" prefWidth="605.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Frm_WarehouseEntryFormController">
+   <children>
+      <ImageView fitHeight="48.0" fitWidth="603.0" layoutX="-2.0" layoutY="-20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/header-accent-wo-text.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="-1.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warehouse Entry Form" textAlignment="CENTER" wrappingWidth="600.0000084936619">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Pane layoutX="13.0" layoutY="47.0" prefHeight="122.0" prefWidth="578.0" style="-fx-border-color: orange; -fx-border-radius: 8;" styleClass="container">
+         <children>
+            <Text layoutX="14.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warehouse ID" wrappingWidth="226.00000849366188">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Warehouse Name" wrappingWidth="226.00000849366188">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+            <CheckBox fx:id="status" layoutX="158.0" layoutY="91.0" mnemonicParsing="false" text="Active">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <TextField fx:id="warehouseID" disable="true" layoutX="159.0" layoutY="27.0" prefHeight="25.0" prefWidth="217.0" />
+            <TextField fx:id="warehouseName" layoutX="158.0" layoutY="61.0" prefHeight="25.0" prefWidth="331.0" />
+            <Text fill="#f80e0e" layoutX="126.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0" text="*" textAlignment="CENTER" wrappingWidth="20.6650390625">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Pane layoutX="14.0" layoutY="185.0" prefHeight="209.0" prefWidth="578.0" style="-fx-border-color: orange; -fx-border-radius: 8;" styleClass="container">
+         <children>
+            <Label layoutX="17.0" layoutY="-8.0" style="-fx-background-color: #E9E9E9;" text="List">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TableView id="table" fx:id="table" layoutX="11.0" layoutY="17.0" onMouseClicked="#handleRowSelect" prefHeight="181.0" prefWidth="556.0" style="-fx-border-color: black;" stylesheets="@frmTable.css">
+               <columns>
+                  <TableColumn fx:id="row" prefWidth="57.0" resizable="false" text="Row" />
+                  <TableColumn fx:id="warehouse_Name" prefWidth="492.0" resizable="false" text="Warehouse Name" />
+                  <TableColumn fx:id="status_col" prefWidth="492.0" resizable="false" text="status" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+      <Pane layoutX="-17.0" layoutY="408.0" prefHeight="79.0" prefWidth="623.0" style="-fx-background-color: #4D5557;">
+         <children>
+            <Button id="close" fx:id="close" contentDisplay="TOP" graphicTextGap="0.0" layoutX="522.0" layoutY="10.0" mnemonicParsing="false" onAction="#btnClose" prefHeight="60.0" prefWidth="87.0" text="Close">
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/exit.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </Pane>
+      <ButtonBar layoutX="-1.0" layoutY="408.0" prefHeight="79.0" prefWidth="469.0">
+         <buttons>
+            <HBox prefHeight="118.0" prefWidth="454.0" spacing="3.0">
+               <children>
+                  <Button id="add" fx:id="add" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnAdd" prefHeight="60.0" prefWidth="87.0" stylesheets="@../../../Documents/NetBeansProjects/frm_EntryForm/src/frm_entryform/frmTable.css" text="Add">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="save" fx:id="save" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnSave" prefHeight="60.0" prefWidth="87.0" text="Save">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/save.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="edit" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnEdit" prefHeight="60.0" prefWidth="87.0" text="Edit">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/edit.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="cancel" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnCancel" prefHeight="60.0" prefWidth="87.0" text="Cancel">
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/close.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="deactivate" contentDisplay="TOP" graphicTextGap="0.0" mnemonicParsing="false" onAction="#btnDeactivate" prefHeight="60.0" prefWidth="87.0" text="Deactivate">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/check.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
